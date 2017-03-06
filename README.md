@@ -40,7 +40,7 @@ or
 `gpio_mode PIN_NUMBER out`
 
 ### Reading pin value
-For pins that are set as *in* you can read the value. The value would be either 0 or 1. **When no signal is passed to the the pin, the returned value would 1 and 0 otherwise.**
+For pins that are set as *in* you can read the value. The value would be either 0 or 1. **Make sure to connect a [pull-down or a pull-up resistor](http://www.resistorguide.com/pull-up-resistor_pull-down-resistor/) in order to read a correct value from the input.**
 
 `gpio_read PIN_NUMBER`
 
