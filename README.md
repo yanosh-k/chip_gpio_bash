@@ -1,5 +1,8 @@
 # Info
-Bash functions to use GPIO with [C.H.I.P.](https://getchip.com/pages/chip) computer. Based on the work of [jefflarkin](https://gist.github.com/jefflarkin) and [gonzalo](https://gist.github.com/gonzalo).
+
+### Code details
+
+Bash functions to use GPIO with [C.H.I.P.](http://chip.jfpossibilities.com/docs/chip.html) computer. Based on the work of [jefflarkin](https://gist.github.com/jefflarkin) and [gonzalo](https://gist.github.com/gonzalo).
 
 The original gists can be found here:
 
@@ -7,31 +10,36 @@ The original gists can be found here:
 
 [https://gist.github.com/gonzalo/f7c00f1d40473865f0a3c5954812481c](https://gist.github.com/gonzalo/f7c00f1d40473865f0a3c5954812481c)
 
+### Board details
+
+Information about the board itself can be found [on their official website](http://chip.jfpossibilities.com/docs/chip.html).
+
+*Since the company that makes these boards is now out of business, I have uploaded the docs [here](https://github.com/yanosh-k/chip_docs), in case the website gets pulled down.*
+
+
 # Installation
 
 Clone or download the gpio.sh file:
 
-`git clone https://github.com/yanosh-k/chip_gpio_bash.git`
+`git clone https://github.com/yanosh-k/chip_gpio_bash.git` or `wget https://raw.githubusercontent.com/yanosh-k/chip_gpio_bash/master/gpio.sh`
 
-`wget https://raw.githubusercontent.com/yanosh-k/chip_gpio_bash/master/gpio.sh`
-
-[Source](https://ss64.com/bash/source.html) or execute the file so the function become availabe for the current shell:
+[Source](https://ss64.com/bash/source.html) or execute the file so the function become available for the current shell:
 
 `source gpio.sh`
 
 # Usage
 
 ### Enabling a pin
-Usually all IO pins are disbaled, so first we need to enable them in order to start working with them:
+Usually all IO pins are disabled, so first we need to enable them in order to start working with them:
 
 `gpio_enable PIN_NUMBER`
 
 Where PIN_NUMBER is a number between 0 and 7. This number corresponds to the IO pins XIO-P0 to XIO-P7.
 
-![Chip Pinout](https://docs.getchip.com/images/chip_pinouts.jpg)
+![Chip Pinout](https://raw.githubusercontent.com/yanosh-k/chip_docs/master/chip_files/chip_pinouts.jpg)
 
-### Seting pin behaviour
-You can set each of the pins to act as IN our OUT. To do so use the followin command:
+### Setting pin behavior
+You can set each of the pins to act as IN our OUT. To do so use the following command:
 
 `gpio_mode PIN_NUMBER in`
 
@@ -45,7 +53,7 @@ For pins that are set as *in* you can read the value. The value would be either 
 `gpio_read PIN_NUMBER`
 
 ### Setting pin value
-For pins that are set as *out* you set a value. If you want to bring the singal up, set its value to 1, if you want to birng the signal down, set its value to 0.
+For pins that are set as *out* you set a value. If you want to bring the signal up, set its value to 1, if you want to bring the signal down, set its value to 0.
 
 `gpio_write PIN_NUMBER 1`
 
@@ -57,3 +65,4 @@ or
 After you finish working with the pin you can disable it by calling the function:
 
 `gpio_disable PIN_NUMBER`
+
